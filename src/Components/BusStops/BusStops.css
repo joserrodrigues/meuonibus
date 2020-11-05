@@ -1,0 +1,26 @@
+.TextBusLine{
+    margin-top: 5px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.TitleBusStopsLines{
+    font-weight: bold;
+}
+
+.ContainerBusStop {
+    min-height: 400px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    max-height: 400px;
+    overflow: auto;
+}
+
+.MessageError{
+    margin-top: 40px;
+    text-align: center;
+}
+
+.MessageNoStopTitle{
+    text-align: center;
+}

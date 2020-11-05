@@ -1,0 +1,25 @@
+.MenuDiv {
+    height: 45px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.Menu {
+    color: #E8A2A2;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 19px;
+    text-decoration: underline;
+    cursor: pointer;    
+}
+
+@media only screen and (max-width: 800px) {
+  .Menu {
+    font-size: 16px;
+    padding: 10px;
+  }
+}
+.MenuSelect {
+    color: #ED1414;
+}
+

@@ -1,0 +1,26 @@
+.TextSearch{
+    margin-top: 5px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.TitleSearchLines{
+    font-weight: bold;
+}
+
+.ContainerBusLine {
+    min-height: 400px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    max-height: 400px;
+    overflow: auto;
+}
+
+.ContainerBorder { 
+    border-right: 1px solid black;
+}
+
+.MessageError{
+    margin-top: 40px;
+    text-align: center;
+}

@@ -1,0 +1,21 @@
+
+.TitleBusStopItem{
+    color: #333333;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.TextBusStopItem{
+    color: #999999;
+}
+
+
+.BusStopFavorite{
+    color: #E8A2A2;
+    cursor: pointer;
+}
+
+.BusStopDistance{
+    text-align: right;
+    color: #E2001A;
+}

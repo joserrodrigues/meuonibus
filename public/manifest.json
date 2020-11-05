@@ -1,25 +1,91 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+	"short_name": "Ônibus SP",
+	"name": "Ônibus SP",
+	"lang": "pt",
+	"description": "Aplicativo para buscar Ônibus em SP",
+	"start_url": "index.js",
+	"background_color": "#ffffff",
+	"theme_color": "#ffffff",
+	"dir": "ltr",
+	"display": "fullscreen",
+	"orientation": "portrait",
+	"icons": [
+		{
+			"src": "/logo512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		},
+		{
+			"src": "/android-icon-192x192-dunplab-manifest-17204.png",
+			"type": "image/png",
+			"sizes": "192x192"
+		},		
+		{
+			"src": "/android-icon-196x196-dunplab-manifest-17204.png",
+			"type": "image/png",
+			"sizes": "196x196"
+		},
+	
+		{
+			"src": "/apple-icon-180x180-dunplab-manifest-17204.png",
+			"type": "image/png",
+			"sizes": "180x180"
+		},
+		{
+			"src": "/apple-icon-152x152-dunplab-manifest-17204.png",
+			"type": "image/png",
+			"sizes": "152x152"
+		},
+		{
+			"src": "/apple-icon-144x144-dunplab-manifest-17204.png",
+			"type": "image/png",
+			"sizes": "144x144"
+		},
+		{
+			"src": "/apple-icon-120x120-dunplab-manifest-17204.png",
+			"type": "image/png",
+			"sizes": "120x120"
+		},
+		{
+			"src": "/apple-icon-114x114-dunplab-manifest-17204.png",
+			"type": "image/png",
+			"sizes": "114x114"
+		},
+		{
+			"src": "/favicon-96x96-dunplab-manifest-17204.png",
+			"type": "image/png",
+			"sizes": "96x96"
+		},
+		{
+			"src": "/apple-icon-76x76-dunplab-manifest-17204.png",
+			"type": "image/png",
+			"sizes": "76x76"
+		},
+		{
+			"src": "/apple-icon-72x72-dunplab-manifest-17204.png",
+			"type": "image/png",
+			"sizes": "72x72"
+		},
+		{
+			"src": "/apple-icon-60x60-dunplab-manifest-17204.png",
+			"type": "image/png",
+			"sizes": "60x60"
+		},
+		{
+			"src": "/apple-icon-57x57-dunplab-manifest-17204.png",
+			"type": "image/png",
+			"sizes": "57x57"
+		},
+		{
+			"src": "/favicon-32x32-dunplab-manifest-17204.png",
+			"type": "image/png",
+			"sizes": "32x32"
+		},
+		{
+			"src": "/favicon-16x16-dunplab-manifest-17204.png",
+			"type": "image/png",
+			"sizes": "16x16"
+		}
+	],
+	"prefer_related_applications": false
 }

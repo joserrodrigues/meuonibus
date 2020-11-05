@@ -1,0 +1,22 @@
+.TitleBuslineItem{
+    color: #999999 !important;
+    font-weight: bold;
+}
+
+.TextBuslineItem{
+    color: #333333;
+    font-weight: bold;
+}
+
+
+.BusLineFavorite{
+    color: #E8A2A2;
+    cursor: pointer;
+}
+
+.BusLineButtonChoose{
+    text-align: right;
+    color: #E2001A;
+    text-decoration: underline;
+    cursor: pointer;
+}
