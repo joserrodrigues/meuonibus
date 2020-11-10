@@ -1,0 +1,18 @@
+.MapsPositionDiv{
+    padding-right: 20px;
+    margin-bottom: 20px;
+    margin-top: 10px;;
+    height: 380px;
+}
+
+.TextBusLinePosition{
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.LinkChangeBusPosition { 
+    font-size: 12px;
+    color: #E2001A;
+    text-decoration: underline;
+}
+

@@ -7,7 +7,10 @@ import { all } from 'redux-saga/effects';
 //Importa o saga dentro do modulo busInfo
 import busInfo from './busInfo/sagas.js';
 
+//Importa o saga dentro do modulo busInfo
+import auth from './auth/sagas.js';
+
 //Junta todos os sagas importados
 export default function* rootSaga() {
-    return yield all([busInfo]);
+    return yield all([busInfo, auth]);
 }

@@ -9,7 +9,7 @@ import { Container, Row, Col, Button, Spinner } from 'react-bootstrap';
 import BusLineViewItem from '../BusLineViewItem/BusLineViewItem'
 
 //Importa o CSS
-import './Busline.css'
+import './BusLine.css'
 
 const BusLineView = (props) => {
     let errorMessage = null;

@@ -14,14 +14,27 @@ import { faBus } from '@fortawesome/free-solid-svg-icons'
 //Importa a imagem que colocamos na pasta Assets que fica dentro da pasta src 
 import busImage from '../../Assets/busImage.jpg';
 
+//importa a função useSelector do React Redux
+import { useSelector } from 'react-redux';
+
 const Header = () => {
 
+    //Busca o nome do usuário no módulo auth
+    const userName = useSelector((state) => state.auth.userName);
+
+    let welcome = ''
+    if(userName !== ''){
+        welcome = "Bem Vindo, " + userName;
+    }
     return (
         <Container fluid={true} className="ContainerHeader">
             <Row>
                 <Col className="TopHeader">
                     <FontAwesomeIcon icon={faBus} /> Ônibus SP
                 </Col>
+                <Col className="TopHeaderRight">
+                    {welcome}
+                </Col>                
             </Row>
             <Row>
                 <Col className="TopImg">

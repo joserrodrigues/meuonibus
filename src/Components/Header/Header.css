@@ -6,6 +6,14 @@
 
 }
 
+.TopHeaderRight {
+    color: #E2001A;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 19px;
+    text-align: right;
+}
+
 .TopImg{
     padding-left: 0 !important;
     padding-right: 0 !important;    

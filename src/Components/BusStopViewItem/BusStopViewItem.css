@@ -15,6 +15,9 @@
     cursor: pointer;
 }
 
+.BusStopFavoriteSelect {
+    color: #E2001A;
+}
 .BusStopDistance{
     text-align: right;
     color: #E2001A;

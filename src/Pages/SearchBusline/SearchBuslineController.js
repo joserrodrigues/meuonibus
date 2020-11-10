@@ -1,56 +1,43 @@
 /**
- * Controller da page Home
+ * Controller da page SearchBusline
  */
-import React, { useRef, useEffect} from 'react';
+import React, { useRef } from 'react';
 
 //Importa a biblioteca de GeoLocation
 import { geolocated } from "react-geolocated";
 
-//Importa a HomeView
-import HomeView from './HomeView'
+//Importa a SearchBuslineView
+import SearchBuslineView from './SearchBuslineView'
 
 //Importa as actions
 import {
     updateUserCoordinate,
-    getHomeInfo,
 } from '../../store/modules/busInfo/actions';
 
 //importa a função useDispatch do React Redux
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
-const HomeController = (props) => {        
+const SearchBuslineController = (props) => {
     console.log(props);
 
     //Inicia a UseRef
     const previousLatitude = useRef(0);
     const previousLongitude = useRef(0);
-    
-    //Busca as variaveis do Reducer
-    const userBusLine = useSelector((state) => state.auth.userBusLine);
-    const userBusStop = useSelector((state) => state.auth.userBusStop);
 
     //Inicia o dispatch
     const dispatch = useDispatch();
 
-    //Realiza a busca após carregar a página
-    useEffect(() => {
-        let busLineID = userBusLine ? userBusLine.cl:undefined;
-        let busStopID = userBusStop ? userBusStop.cp: undefined; //7014417
-        //Envia informação com o ID do Parada e da linha 
-        dispatch(getHomeInfo(busStopID, busLineID));
-    }, [])
-
     //Verifica se a Geolocation esta disponvivel e se a posição é diferente do que pegamos anteriormente
     if (props.isGeolocationAvailable && props.isGeolocationEnabled && props.coords !== null && props.coords !== undefined &&
-        previousLatitude.current !== props.coords.latitude && previousLongitude.current !== props.coords.longitude){
+        previousLatitude.current !== props.coords.latitude && previousLongitude.current !== props.coords.longitude) {
         previousLatitude.current = props.coords.latitude;
         previousLongitude.current = props.coords.longitude;
         //Envia a informação para o Redux
-        dispatch(updateUserCoordinate(props.coords.latitude, props.coords.longitude)); 
+        dispatch(updateUserCoordinate(props.coords.latitude, props.coords.longitude));
     }
 
     return (
-        <HomeView />
+        <SearchBuslineView />
     )
 }
 
@@ -60,4 +47,4 @@ export default geolocated({
         enableHighAccuracy: false,
     },
     userDecisionTimeout: 5000,
-})(HomeController);
+})(SearchBuslineController);

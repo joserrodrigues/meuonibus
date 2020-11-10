@@ -1,17 +1,17 @@
 import React from 'react';
-import './Home.css';
+import './SearchBusline.css';
 
 //Importa os componentes do Bootstrap
 import { Container, Row, Col } from 'react-bootstrap';
 
 //Importa os componentes
-import BusLineArriveController from '../../Components/BusLineArrive/BusLineArriveController';
-import BusPositionController from '../../Components/BusPosition/BusPositionController';
+import BusLineController from '../../Components/BusLine/BusLineController';
+import BusStopsController from '../../Components/BusStops/BusStopsController';
 import Header from '../../Components/Header/Header';
 import Menu from '../../Components/Menu/Menu';
 import Footer from '../../Components/Footer/Footer';
 
-function HomeView(props ) {
+function SearchBuslineView(props) {
     return (
         <Container fluid={true}>
             <Row>
@@ -23,18 +23,18 @@ function HomeView(props ) {
                 </Col>
             </Row>
             <Row>
-                <Col lg="4" xl="4" md="12" sm="12" xs="12">
-                    <BusLineArriveController />
+                <Col lg="6" xl="6" md="12" sm="12" xs="12">
+                    <BusLineController />
                 </Col>
-                <Col lg="8" xl="8" md="12" sm="12" xs="12">
-                    <BusPositionController />
+                <Col lg="6" xl="6" md="12" sm="12" xs="12">
+                    <BusStopsController />
                 </Col>
             </Row>
             <Row >
                 <Footer />
             </Row>
-        </Container>      
+        </Container>
     );
 }
 
-export default HomeView;
+export default SearchBuslineView;

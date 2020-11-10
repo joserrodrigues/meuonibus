@@ -1,0 +1,23 @@
+body {
+  background-color: white;
+}
+.RowFooter{
+    padding-left: 0 !important;
+    padding-right: 0 !important;       
+}
+
+.divLogin{
+    min-height: 400px;;
+}
+
+.titleLogin{
+    font-weight: bold;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.buttonLogin{
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}

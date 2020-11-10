@@ -18,7 +18,13 @@ const INITIAL_STATE = {
     userCoordinate: {
         latitude: 0,
         longitude: 0
-    }
+    },
+    arriveBusLines: [],
+    isConnectingGetArriveBusStops: false,
+    getArriveBusStopsWithSuccess: 0,
+    busLinesPositions: [],
+    isConnectingGetBusLinePositions: false,
+    getBusLinePositionsWithSuccess: 0,    
 };
 
 //Cria a função responsável por organizar o Reducer
@@ -80,6 +86,49 @@ export default function busInfo(state = INITIAL_STATE, { type, payload }) {
                     latitude: payload.latitude,
                     longitude: payload.longitude
                 };
+                break;
+            }
+            case 'busInfo/GET_ARRIVE_BUS_STOPS_START': {
+                //Altera a informação do Info no state
+                draft.arriveBusLines = [];
+                draft.isConnectingGetArriveBusStops = true;
+                draft.getArriveBusStopsWithSuccess = 0;
+                break;
+            }
+            case 'busInfo/GET_ARRIVE_BUS_STOPS_FINISH_SUCCESS': {
+                //Altera a informação do Info no state
+                draft.arriveBusLines = payload.arriveBusLines;
+                draft.isConnectingGetArriveBusStops = false;
+                draft.getArriveBusStopsWithSuccess = 1;
+                draft.apiToken = payload.apiToken;
+                break;
+            }
+            case 'busInfo/GET_ARRIVE_BUS_STOPS_FINISH_ERROR': {
+                //Altera a informação do Info no state
+                draft.arriveBusLines = [];
+                draft.isConnectingGetArriveBusStops = false;
+                draft.getArriveBusStopsWithSuccess = 2;
+                break;
+            }
+            case 'busInfo/GET_BUSLINES_POSITIONS_START': {
+                //Altera a informação do Info no state
+                draft.busLinesPositions = [];
+                draft.isConnectingGetBusLinePositions = true;
+                draft.getBusLinePositionsWithSuccess = 0;
+                break;
+            }
+            case 'busInfo/GET_BUSLINES_POSITIONS_FINISH_SUCCESS': {
+                //Altera a informação do Info no state
+                draft.busLinesPositions = payload.busLinesPositions;
+                draft.isConnectingGetBusLinePositions = false;
+                draft.getBusLinePositionsWithSuccess = 1;
+                break;
+            }
+            case 'busInfo/GET_BUSLINES_POSITIONS_FINISH_ERROR': {
+                //Altera a informação do Info no state
+                draft.busLinesPositions = [];
+                draft.isConnectingGetBusLinePositions = false;
+                draft.getBusLinePositionsWithSuccess = 2;
                 break;
             }
             default:

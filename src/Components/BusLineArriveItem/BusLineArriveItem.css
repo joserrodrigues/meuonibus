@@ -1,6 +1,7 @@
-.TitleBuslineItem{
-    color: #999999 !important;
+.TextBuslineArriveItem{
+    color: #333 !important;
     font-weight: bold;
+    margin-top: 40px;
 }
 
 .TextBuslineItem{
@@ -14,13 +15,19 @@
     cursor: pointer;
 }
 
-.BusLineFavoriteSelect {
-    color: #E2001A;
-}
-
 .BusLineButtonChoose{
     text-align: right;
     color: #E2001A;
     text-decoration: underline;
     cursor: pointer;
+}
+
+.ArriveText{
+    font-size: 13px;
+    color: #999;
+}
+
+.ArriveTime{
+    font-size: 13px;
+    color: #E2001A;
 }
