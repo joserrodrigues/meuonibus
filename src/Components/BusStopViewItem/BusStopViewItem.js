@@ -37,7 +37,7 @@ const BusStopViewItem = (props) => {
 
     //Busca as variaveis do Reducer
     const userBusLine = useSelector((state) => state.auth.userBusLine);
-    const userBusStop = useSelector((state) => state.auth.userBusStop);    
+    const userBusStop = useSelector((state) => state.auth.userBusStop);
 
     //Calcula a distancia entre dois pontos
     const calculateDistance = (lat1, lon1, lat2, lon2) => {
@@ -51,15 +51,15 @@ const BusStopViewItem = (props) => {
             Math.sin(dLon / 2) * Math.sin(dLon / 2) * Math.cos(lat1) * Math.cos(lat2);
         var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
         var d = R * c;
-        return (d*1000).toFixed(0);
-    }    
+        return (d * 1000).toFixed(0);
+    }
 
     //Verifica se temos a posição do usuário
     let distance = 0;
-    if (userCoordinate.latitude !== 0 && userCoordinate.longitude !== 0){
+    if (userCoordinate.latitude !== 0 && userCoordinate.longitude !== 0) {
         //Calcula a distancia em metros
         distance = calculateDistance(userCoordinate.latitude, userCoordinate.longitude,
-            props.busStop.py, props.busStop.px );
+            props.busStop.py, props.busStop.px);
     }
 
     //Verifica se a linha é favorita e coloca a class BusLineFavoriteSelect
@@ -95,3 +95,4 @@ const BusStopViewItem = (props) => {
     )
 }
 export default BusStopViewItem;
+
