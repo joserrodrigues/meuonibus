@@ -1,7 +1,7 @@
 import React from "react";
 
 //Importa os componentes do react-router
-import { Route, Switch } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 //Importa o HomeController
 import HomeController from './Pages/Home/HomeController';
@@ -24,18 +24,18 @@ export default function RouterController() {
     console.log( userGoogleID);
     if (userGoogleID !== null && userGoogleID !== ""){
         return (
-            <Switch>
+            <Routes>
                 { /* Controladores das Rotas, com o caminho da Rota e qual função/objeto está relacionado */}
-                <Route path="/search" > <SearchBuslineController /></Route>
-                <Route path="/"><HomeController /></Route>
-            </Switch>
+                <Route path="/search" element={<SearchBuslineController />} />
+                <Route path="/" element={<HomeController />} />
+            </Routes>
         );
     } else {
         return (
-            <Switch>
-                { /* Controladores das Rotas, com o caminho da Rota e qual função/objeto está relacionado */}
-                <Route path="/"><LoginController /></Route>
-            </Switch>
+          <Routes>
+            {/* Controladores das Rotas, com o caminho da Rota e qual função/objeto está relacionado */}
+            <Route path="/" element={<LoginController />} />
+          </Routes>
         );
     }
     

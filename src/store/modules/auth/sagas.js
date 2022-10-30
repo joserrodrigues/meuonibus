@@ -3,7 +3,7 @@
  */
 //Importa os effects do Redux-Saga 
 import { takeLatest, call, put, all, select } from 'redux-saga/effects';
-
+import { doc, getDoc, setDoc } from "firebase/firestore";
 import { db } from "../../../Services/Firestore";
 
 // Importa as funções Actions que serão chamadas pelo Saga
@@ -22,11 +22,11 @@ function* changeUserInfo({ payload }) {
         let userGoogleID = yield select(state => state.auth.userGoogleID);        
 
         //Salva as informações no FireStore usando o GoogleID como ID no banco
-        db.collection("userInfo")
-            .doc(userGoogleID).set({
-                busLine: busLine,
-                busStop: busStop
-            });
+        const docRef = doc(db, "userInfo", userGoogleID);
+        setDoc(docRef, {
+          busLine: busLine,
+          busStop: busStop,
+        });
 
         //chama Redux Action para atualizar a informação do usuário
         yield put(updateUserInfo(busLine, busStop));
@@ -40,11 +40,11 @@ function* changeUserInfo({ payload }) {
 //Busca as informações no FireStore de forma assícrona
 async function getFireStoreData(userGoogleID) {
     
-    //Busca as informações da colletion userInfo cujo ID é igual ao userGoogleID
-    const userInfoRef = db.collection('userInfo').doc(userGoogleID);
+    //Busca as informações da colletion userInfo cujo ID é igual ao userGoogleID    
+    const docRef = doc(db, "userInfo", userGoogleID);
     
     //Busca as informações
-    const info = await userInfoRef.get();
+    const info = await getDoc(docRef);
     if (!info.exists) {
         console.log('No such document!');
         return {}

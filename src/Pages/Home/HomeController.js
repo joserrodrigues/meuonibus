@@ -4,7 +4,7 @@
 import React, { useRef, useEffect} from 'react';
 
 //Importa a biblioteca de GeoLocation
-import { geolocated } from "react-geolocated";
+import { useGeolocated } from "react-geolocated";
 
 //Importa a HomeView
 import HomeView from './HomeView'
@@ -40,13 +40,22 @@ const HomeController = (props) => {
         dispatch(getHomeInfo(busStopID, busLineID));
     }, [])
 
+    //Get Geo Coordinates
+    const { coords, isGeolocationAvailable, isGeolocationEnabled } =
+      useGeolocated({
+        positionOptions: {
+          enableHighAccuracy: false,
+        },
+        userDecisionTimeout: 5000,
+      });    
+
     //Verifica se a Geolocation esta disponvivel e se a posição é diferente do que pegamos anteriormente
-    if (props.isGeolocationAvailable && props.isGeolocationEnabled && props.coords !== null && props.coords !== undefined &&
-        previousLatitude.current !== props.coords.latitude && previousLongitude.current !== props.coords.longitude){
-        previousLatitude.current = props.coords.latitude;
-        previousLongitude.current = props.coords.longitude;
+    if (isGeolocationAvailable && isGeolocationEnabled && coords !== null && coords !== undefined &&
+        previousLatitude.current !== coords.latitude && previousLongitude.current !== coords.longitude){
+        previousLatitude.current = coords.latitude;
+        previousLongitude.current = coords.longitude;
         //Envia a informação para o Redux
-        dispatch(updateUserCoordinate(props.coords.latitude, props.coords.longitude)); 
+        dispatch(updateUserCoordinate(coords.latitude, coords.longitude)); 
     }
 
     return (
@@ -55,9 +64,4 @@ const HomeController = (props) => {
 }
 
 //Configura o Geolocated para buscar a informação
-export default geolocated({
-    positionOptions: {
-        enableHighAccuracy: false,
-    },
-    userDecisionTimeout: 5000,
-})(HomeController);
+export default HomeController;

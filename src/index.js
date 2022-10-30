@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from "react-dom/client";
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 //Importa o store
@@ -17,7 +17,10 @@ import { BrowserRouter } from "react-router-dom";
 //Importa o Controlador de rotas do aplicativo
 import RouterController from './RouterController';
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(
+  document.getElementById('root')
+);
+root.render(
   <React.StrictMode>
     {/* Adiciona o BrowserRouter para controlar a rota */}
     <BrowserRouter>
